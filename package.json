@@ -1,6 +1,6 @@
 {
   "name": "@bikematrix/web-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A library of BikeMatrix compatibility web components",
   "main": "dist/bm_core.umd.js",
   "module": "dist/bm_core.es.js",
