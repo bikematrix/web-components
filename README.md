@@ -24,13 +24,13 @@ You can install Bike Matrix Web Components using either npm or by including it d
 ### NPM
 
 ```bash
-npm install @bikematrix/widget
+npm install @bikematrix/web-component
 ```
 
 Then import it in your application:
 
 ```javascript
-import BikeMatrix from "@bikematrix/widget";
+import BikeMatrix from "@bikematrix/web-component";
 ```
 
 ### CDN
@@ -40,7 +40,7 @@ Alternatively, include the script directly in your HTML:
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/widget"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-component"
 ></script>
 ```
 
@@ -55,13 +55,13 @@ Choose one of these options to add BikeMatrix to your project:
 #### Option A: NPM Installation
 
 ```bash
-npm install @bikematrix/widget
+npm install @bikematrix/web-component
 ```
 
 Then import it in your JavaScript/TypeScript file:
 
 ```javascript
-import BikeMatrix from "@bikematrix/widget";
+import BikeMatrix from "@bikematrix/web-component";
 ```
 
 #### Option B: CDN Installation
@@ -71,7 +71,7 @@ Include the script directly in your HTML:
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/widget"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-component"
 ></script>
 ```
 
@@ -393,7 +393,7 @@ BikeMatrix.updateSku(sku);
 
 ```jsx
 import { useEffect } from "react";
-import BikeMatrix from "@bikematrix/widget";
+import BikeMatrix from "@bikematrix/web-component";
 
 function BikeMatrixCore() {
   useEffect(() => {
@@ -410,7 +410,7 @@ function BikeMatrixCore() {
 ```html
 <script setup>
   import { onMounted, onBeforeUnmount } from "vue";
-  import BikeMatrix from "@bikematrix/widget";
+  import BikeMatrix from "@bikematrix/web-component";
 
   onMounted(() => {
     BikeMatrix.init();
@@ -460,17 +460,3 @@ function onSelectVariant(sku) {
   BikeMatrix.updateSku(sku);
 }
 ```
-
-### TODO
-
-- CollectionResult: Add support for using barcode/sku/metafield. We should be able to choose in the settings/config. This gives us two choices in the shopify theme code:
-  - Pass all skus, barcodes and metafield variants to the component, and use config in the component to choose which one to use.
-  - Pass only one of the above to the component, and use that directly, but we will need to choose which one to use in the shopify theme code (where we don't have the config).
-
-- BikdSelector:
-  1. asset_url is required to be set in config - may not be required any longer
-  2. may need skuField to be set in config
-  3. may need bm_currentTemplateName
-
-- Compatible List
-  - "Price From" - if products have many variants, do we show the 'From'. Could probably put this directly into the Liquid rather than a param on the component (which there currently isn't one) 

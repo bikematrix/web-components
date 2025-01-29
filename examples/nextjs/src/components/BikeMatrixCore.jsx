@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import BikeMatrix from "@bikematrix/widget";
+import BikeMatrix from "@bikematrix/web-components";
 
 export default function BikeMatrixCore() {
   const initialized = useRef(false);

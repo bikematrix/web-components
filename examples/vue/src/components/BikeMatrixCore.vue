@@ -1,7 +1,7 @@
 <script setup>
   import { onMounted, onUnmounted, onBeforeUnmount, ref, watch } from "vue";
   import { useRoute } from "vue-router";
-  import BikeMatrix from "@bikematrix/widget";
+  import BikeMatrix from "@bikematrix/web-components";
 
   const route = useRoute();
   const initialized = ref(false);

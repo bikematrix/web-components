@@ -1,9 +1,9 @@
 {
-  "name": "bikematrix-widget-react-example",
+  "name": "bikematrix-web-components-react-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bikematrix/widget": "file:../../",
+    "@bikematrix/web-components": "file:../../",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"

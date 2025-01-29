@@ -1,6 +1,6 @@
 <script setup>
   import { onMounted, ref } from "vue";
-  import BikeMatrix from "@bikematrix/widget";
+  import BikeMatrix from "@bikematrix/web-components";
 
   onMounted(() => {
     BikeMatrix.updateConfig({
