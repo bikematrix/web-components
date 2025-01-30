@@ -24,13 +24,13 @@ You can install Bike Matrix Web Components using either npm or by including it d
 ### NPM
 
 ```bash
-npm install @bikematrix/web-component
+npm install @bikematrix/web-components
 ```
 
 Then import it in your application:
 
 ```javascript
-import BikeMatrix from "@bikematrix/web-component";
+import BikeMatrix from "@bikematrix/web-components";
 ```
 
 ### CDN
@@ -40,7 +40,7 @@ Alternatively, include the script directly in your HTML:
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-component"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components"
 ></script>
 ```
 
@@ -55,13 +55,13 @@ Choose one of these options to add BikeMatrix to your project:
 #### Option A: NPM Installation
 
 ```bash
-npm install @bikematrix/web-component
+npm install @bikematrix/web-components
 ```
 
 Then import it in your JavaScript/TypeScript file:
 
 ```javascript
-import BikeMatrix from "@bikematrix/web-component";
+import BikeMatrix from "@bikematrix/web-components";
 ```
 
 #### Option B: CDN Installation
@@ -71,7 +71,7 @@ Include the script directly in your HTML:
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-component"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components"
 ></script>
 ```
 
@@ -393,7 +393,7 @@ BikeMatrix.updateSku(sku);
 
 ```jsx
 import { useEffect } from "react";
-import BikeMatrix from "@bikematrix/web-component";
+import BikeMatrix from "@bikematrix/web-components";
 
 function BikeMatrixCore() {
   useEffect(() => {
@@ -410,7 +410,7 @@ function BikeMatrixCore() {
 ```html
 <script setup>
   import { onMounted, onBeforeUnmount } from "vue";
-  import BikeMatrix from "@bikematrix/web-component";
+  import BikeMatrix from "@bikematrix/web-components";
 
   onMounted(() => {
     BikeMatrix.init();
