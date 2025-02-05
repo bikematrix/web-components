@@ -5621,7 +5621,7 @@ function an({
       return null;
     const A = (V = (O = e == null ? void 0 : e.current) == null ? void 0 : O.parentElement) == null ? void 0 : V.querySelector('template[slot="product-card"]');
     b === "verbose" && console.log("CompatibleList Product Card Template: ", A);
-    const q = (A ? A.innerHTML : on()).replace(/\@\@#if\s+(\w+)\@\@(.*?)\@\@\/if\@\@/gs, (I, G, x) => w[G] ? x : "").replace(/\@\@\s*(\w+)\s*\@\@/g, (I, G) => {
+    const q = (A ? A.innerHTML : on()).replace(o.isShopify ? /\@\@#if\s+(\w+)\@\@(.*?)\@\@\/if\@\@/gs : /\{\{#if\s+(\w+)\}\}(.*?)\{\{\/if\}\}/gs, (I, G, x) => w[G] ? x : "").replace(o.isShopify ? /\@\@\s*(\w+)\s*\@\@/g : /\{\{\s*(\w+)\s*\}\}/g, (I, G) => {
       if (G === "compatibility")
         return '<bikematrix-compatibilitylabel data-type="compatible"></bikematrix-compatibilitylabel>';
       const x = w[G];
