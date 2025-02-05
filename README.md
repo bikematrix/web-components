@@ -39,8 +39,8 @@ Alternatively, include the script directly in your HTML:
 
 ```html
 <script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components"
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components/dist/bm_core.js"
 ></script>
 ```
 
@@ -70,8 +70,8 @@ Include the script directly in your HTML:
 
 ```html
 <script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components"
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components/dist/bm_core.js"
 ></script>
 ```
 
