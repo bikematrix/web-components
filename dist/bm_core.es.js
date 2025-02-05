@@ -1240,9 +1240,11 @@ const Gt = de(!1), j = de(null), we = de([]), re = de(!1), Ee = de([]), oe = de(
   Va(() => {
     j.value = null, we.value = [], re.value = !1, Ee.value = [], oe.value = !1;
   });
-}, zo = "bm_currentBike", Ka = "v2", Ja = "https://bikematrix-assetcdn.azureedge.net", Pr = {
-  // Bike Selector
+}, zo = "bm_currentBike", Ka = "v2", Ja = "https://cdn.bikematrix.io", Pr = {
+  // Shopify specific
   isShopify: !1,
+  skuField: "sku",
+  // Bike Selector
   apiUrl: "https://api.bikematrix.io/",
   currentCollectionHandle: "",
   categories: [],
@@ -5386,25 +5388,28 @@ const Ji = async (t, e, r) => {
 };
 function Wi({
   "data-product-id": t,
-  "data-product-skus": e
+  "data-product-skus": e,
+  "data-product-barcodes": r,
+  "data-product-metafields": o
 }) {
-  const r = window.BikeMatrix, o = r.getConfig(), [a, i] = Q(!1), n = !!r.getActiveSubscription();
+  const a = window.BikeMatrix, i = a.getConfig(), [n, s] = Q(!1), u = !!a.getActiveSubscription();
   ie = {
     type: "unavailable",
     ...Se.unavailable
   };
   const {
-    currentCollectionHandle: s,
-    isHomePage: u,
-    isSearchPage: l,
-    showSearchPageCollection: p,
-    showHomePageCollection: c,
-    logLevel: g
-  } = o, f = !!o.pageType && o.pageType === "product", _ = e || "";
-  return g === "verbose" && (console.log("CollectionResult currentCollectionHandle: ", s), console.log("CollectionResult productId: ", t), console.log("CollectionResult productVariantsSkus: ", e), console.log("CollectionResult skusToCheck: ", _), console.log("CollectionResult BikeSignal.value: " + JSON.stringify(j.value))), oe.value ? i(!0) : j.value && Yi(u, l, c, p, f, t, s) ? Ji(j.value.key, t, _).then(() => {
-    i(!0);
-  }) : i(!1), g === "verbose" && console.log("CollectionResult status: ", ie), d(N, {
-    children: n && a && d(N, {
+    currentCollectionHandle: l,
+    isHomePage: p,
+    isSearchPage: c,
+    showSearchPageCollection: g,
+    showHomePageCollection: f,
+    logLevel: _,
+    skuField: m
+  } = i, y = !!i.pageType && i.pageType === "product", C = m === "barcode" ? r : m === "metafield" ? o : e || "";
+  return _ === "verbose" && (console.log("CollectionResult currentCollectionHandle: ", l), console.log("CollectionResult productId: ", t), console.log("CollectionResult productVariantsSkus: ", e), console.log("CollectionResult skusToCheck: ", C), console.log("CollectionResult BikeSignal.value: " + JSON.stringify(j.value))), oe.value ? s(!0) : j.value && Yi(p, c, f, g, y, t, l) ? Ji(j.value.key, t, C).then(() => {
+    s(!0);
+  }) : s(!1), _ === "verbose" && console.log("CollectionResult status: ", ie), d(N, {
+    children: u && n && d(N, {
       children: [d("style", {
         type: "text/css",
         children: Ki

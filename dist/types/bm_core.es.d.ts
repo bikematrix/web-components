@@ -3,6 +3,7 @@ declare interface Bike {
 
 declare interface BikeMatrixConfig {
     isShopify?: boolean;
+    skuField?: "sku" | "barcode" | "metafield";
     apiUrl?: string;
     categories?: Array<{
         title: string;
