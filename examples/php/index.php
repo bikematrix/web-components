@@ -160,7 +160,7 @@ $productResultConfig = [
   </div>
 
   <!-- Bike Matrix Core Script -->
-  <script src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components/dist/bm_core.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.1/dist/bm_core.js" type="text/javascript"></script>
 </body>
 
 </html>
