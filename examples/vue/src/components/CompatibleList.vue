@@ -11,7 +11,7 @@
           productUrl: "/product",
           productTitle: "Disc Resin Brake Pad 1-Pair",
           featuredImage:
-            "//cycleways.co.nz/cdn/shop/products/nzfguo0fiv4gexir5uub.jpg?v=1687794103",
+            "http://cycleways.co.nz/cdn/shop/products/nzfguo0fiv4gexir5uub.jpg?v=1687794103",
           price: "$50.00",
           skus: ["8022530035613"],
         },

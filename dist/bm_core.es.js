@@ -1236,9 +1236,9 @@ function Ga(t) {
     return de(t);
   }, []);
 }
-const Gt = de(!1), M = de(null), De = de([]), re = de(!1), Ee = de([]), oe = de(!1), Ka = () => {
+const Gt = de(!1), M = de(null), Se = de([]), re = de(!1), Ee = de([]), oe = de(!1), Ka = () => {
   Ma(() => {
-    M.value = null, De.value = [], re.value = !1, Ee.value = [], oe.value = !1;
+    M.value = null, Se.value = [], re.value = !1, Ee.value = [], oe.value = !1;
   });
 }, zo = "bm_currentBike", Ja = "v2", Ya = "https://cdn.bikematrix.io", Pr = {
   // Shopify specific
@@ -3935,7 +3935,7 @@ const Io = class Me {
     this.currentBike === null ? (e = window.bm_selectBikeButton) == null || e.classList.remove("show-selected") : (r = window.bm_selectBikeButton) == null || r.classList.add("show-selected");
   }
   ChangeBike() {
-    this.config.logLevel === "verbose" && console.log("ChangeBike() Method Called"), !(re.value === !0 || oe.value === !0) && (re.value = !0, oe.value = !0, De.value = [], Ee.value = [], console.log("ChangeBike updateBikeSignal..."), this.updateBikeSignal().then(() => {
+    this.config.logLevel === "verbose" && console.log("ChangeBike() Method Called"), !(re.value === !0 || oe.value === !0) && (re.value = !0, oe.value = !0, Se.value = [], Ee.value = [], console.log("ChangeBike updateBikeSignal..."), this.updateBikeSignal().then(() => {
       this.config.logLevel === "verbose" && console.log("Bike Signal Updated: ", JSON.stringify(M.value, null, 2)), this.ResetSelectedBikeIndicator(), this.RefreshCompatibleSkus().then(() => {
         document.dispatchEvent(new Event("RefreshCompatibility", {
           bubbles: !0,
@@ -3980,7 +3980,7 @@ const Io = class Me {
     var a, i;
     var r = JSON.parse(sessionStorage.getItem(e));
     if (r)
-      this.config.logLevel === "verbose" && console.log("Refresh Collection SKUs from Session: ", JSON.stringify(r), null, 2), De.value = r;
+      this.config.logLevel === "verbose" && console.log("Refresh Collection SKUs from Session: ", JSON.stringify(r), null, 2), Se.value = r;
     else {
       const n = Object.values(this.config.products || {}).map((p) => p.skus).flat();
       this.config.logLevel === "verbose" && console.log("Refresh Collection SKUs from API. SKUs: ", JSON.stringify(n), null, 2);
@@ -3997,7 +3997,7 @@ const Io = class Me {
           console.log("function RefreshCompatibleSkus() operation aborted");
           return;
         }
-        sessionStorage.setItem(e, JSON.stringify(p)), De.value = p;
+        sessionStorage.setItem(e, JSON.stringify(p)), Se.value = p;
       } catch (p) {
         p.name === "AbortError" ? console.log("function RefreshCompatibleSkus() fetch aborted") : console.error("function RefreshCompatibleSkus() fetch error", p);
       } finally {
@@ -5335,7 +5335,7 @@ function Ko({
     })]
   }) : d(q, {});
 }
-const Se = {
+const Be = {
   unavailable: {
     heading: ""
   },
@@ -5357,7 +5357,7 @@ const Yi = async (t, e, r) => {
   if (!r || !Ee.value) {
     ie = {
       type: "unavailable",
-      ...Se.unavailable
+      ...Be.unavailable
     };
     return;
   }
@@ -5370,16 +5370,16 @@ const Yi = async (t, e, r) => {
   const a = o.every((s) => (s == null ? void 0 : s.compatible) === !1), i = o.some((s) => (s == null ? void 0 : s.compatible) === !0 && s.warning === !0), n = o.some((s) => (s == null ? void 0 : s.compatible) === !0);
   o.some((s) => (s == null ? void 0 : s.compatible) === null), i ? ie = {
     type: "warning",
-    ...Se.warning
+    ...Be.warning
   } : n ? ie = {
     type: "compatible",
-    ...Se.compatible
+    ...Be.compatible
   } : a ? ie = {
     type: "incompatible",
-    ...Se.incompatible
+    ...Be.incompatible
   } : ie = {
     type: "unavailable",
-    ...Se.unavailable
+    ...Be.unavailable
   };
 }, Wi = function(t, e, r, o, a, i, n) {
   var u;
@@ -5403,7 +5403,7 @@ function Zi({
   const a = window.BikeMatrix, i = a.getConfig(), [n, s] = Q(!1), u = !!a.getActiveSubscription();
   ie = {
     type: "unavailable",
-    ...Se.unavailable
+    ...Be.unavailable
   };
   const {
     currentCollectionHandle: l,
@@ -5662,15 +5662,14 @@ function nn({
       i(!1);
       return;
     }
-    console.log("CompatibleCollectionSkusSignal.value", De.value);
-    const B = rn(De.value).map(x);
+    const B = rn(Se.value).map(x);
     c(B);
     const z = on(y, B);
     l(z), i(!0);
   }, [
     _,
     M.value,
-    De.value,
+    Se.value,
     re.value,
     // compatibleProducts,
     y
@@ -6000,7 +5999,7 @@ const Ue = () => {
   for (const o in e)
     o !== "__proto__" && o !== "constructor" && (o in t ? typeof t[o] == "string" || t[o] instanceof String || typeof e[o] == "string" || e[o] instanceof String ? r && (t[o] = e[o]) : Yo(t[o], e[o], r) : t[o] = e[o]);
   return t;
-}, Ae = (t) => t.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}, De = (t) => t.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 var hn = {
   "&": "&amp;",
   "<": "&lt;",
@@ -6698,7 +6697,7 @@ class Bn {
       maxReplaces: k,
       alwaysFormat: b
     } = e.interpolation;
-    this.escape = r !== void 0 ? r : bn, this.escapeValue = o !== void 0 ? o : !0, this.useRawValueToEscape = a !== void 0 ? a : !1, this.prefix = i ? Ae(i) : n || "{{", this.suffix = s ? Ae(s) : u || "}}", this.formatSeparator = l || ",", this.unescapePrefix = p ? "" : c || "-", this.unescapeSuffix = this.unescapePrefix ? "" : p || "", this.nestingPrefix = g ? Ae(g) : f || Ae("$t("), this.nestingSuffix = _ ? Ae(_) : m || Ae(")"), this.nestingOptionsSeparator = y || ",", this.maxReplaces = k || 1e3, this.alwaysFormat = b !== void 0 ? b : !1, this.resetRegExp();
+    this.escape = r !== void 0 ? r : bn, this.escapeValue = o !== void 0 ? o : !0, this.useRawValueToEscape = a !== void 0 ? a : !1, this.prefix = i ? De(i) : n || "{{", this.suffix = s ? De(s) : u || "}}", this.formatSeparator = l || ",", this.unescapePrefix = p ? "" : c || "-", this.unescapeSuffix = this.unescapePrefix ? "" : p || "", this.nestingPrefix = g ? De(g) : f || De("$t("), this.nestingSuffix = _ ? De(_) : m || De(")"), this.nestingOptionsSeparator = y || ",", this.maxReplaces = k || 1e3, this.alwaysFormat = b !== void 0 ? b : !1, this.resetRegExp();
   }
   reset() {
     this.options && this.init(this.options);
@@ -6814,7 +6813,7 @@ const Sn = (t) => {
     formatName: e,
     formatOptions: r
   };
-}, Be = (t) => {
+}, Ae = (t) => {
   const e = {};
   return (r, o, a) => {
     let i = a;
@@ -6831,32 +6830,32 @@ class En {
   constructor() {
     let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     this.logger = ue.create("formatter"), this.options = e, this.formats = {
-      number: Be((r, o) => {
+      number: Ae((r, o) => {
         const a = new Intl.NumberFormat(r, {
           ...o
         });
         return (i) => a.format(i);
       }),
-      currency: Be((r, o) => {
+      currency: Ae((r, o) => {
         const a = new Intl.NumberFormat(r, {
           ...o,
           style: "currency"
         });
         return (i) => a.format(i);
       }),
-      datetime: Be((r, o) => {
+      datetime: Ae((r, o) => {
         const a = new Intl.DateTimeFormat(r, {
           ...o
         });
         return (i) => a.format(i);
       }),
-      relativetime: Be((r, o) => {
+      relativetime: Ae((r, o) => {
         const a = new Intl.RelativeTimeFormat(r, {
           ...o
         });
         return (i) => a.format(i, o.range || "day");
       }),
-      list: Be((r, o) => {
+      list: Ae((r, o) => {
         const a = new Intl.ListFormat(r, {
           ...o
         });
@@ -6874,7 +6873,7 @@ class En {
     this.formats[e.toLowerCase().trim()] = r;
   }
   addCached(e, r) {
-    this.formats[e.toLowerCase().trim()] = Be(r);
+    this.formats[e.toLowerCase().trim()] = Ae(r);
   }
   format(e, r, o) {
     let a = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
