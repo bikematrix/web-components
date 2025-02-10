@@ -3746,7 +3746,10 @@ class St {
         body: JSON.stringify(r),
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          ...this._apiKey && {
+            "bm-subscription-key": this._apiKey
+          }
         },
         ...a
       });
