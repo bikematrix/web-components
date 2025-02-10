@@ -11,7 +11,8 @@
     BikeMatrix.init({
       logLevel: "verbose",
       apiUrl:
-        "https://bikematrix-20230522-1515-dev-apim.azure-api.net/proxy/v3/",
+        "https://api-staging.bikematrix.io/bike/v2/",
+      apiKey: "YOUR_API_KEY",
       pageType: "collection",
       collections: [
         {

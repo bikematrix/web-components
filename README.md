@@ -82,7 +82,8 @@ Add the core configuration block to your HTML:
 ```html
 <script type="application/json" data-bikematrix-config>
   {
-    "apiUrl": "YOUR_API_URL",
+    "apiUrl": "https://api-staging.bikematrix.io/bike/v2/",
+    "apiKey": "YOUR_API_KEY",
     "pageType": "collection",
     "currentCollectionHandle": "brake-pads",
     "collections": [
@@ -154,7 +155,8 @@ BikeMatrix is configured using a JSON configuration block in your HTML:
 ```html
 <script type="application/json" data-bikematrix-config>
   {
-    "apiUrl": "YOUR_API_URL",
+    "apiUrl": "https://api-staging.bikematrix.io/bike/v2/",
+    "apiKey": "YOUR_API_KEY",
     "pageType": "collection",
     "currentCollectionHandle": "brake-pads",
     "collections": [
@@ -186,6 +188,7 @@ Configuration options for BikeMatrix components, organized by feature area.
 | Option                    | Type                                                        | Default      | Description                                      |
 | ------------------------- | ----------------------------------------------------------- | ------------ | ------------------------------------------------ |
 | `apiUrl`                  | string                                                      | _(Required)_ | Your BikeMatrix API endpoint URL                 |
+| `apiKey`                  | string                                                      | _(Required)_ | Your BikeMatrix API key                          |
 | `pageType`                | "collection" \| "product" \| "index" \| "search"            | "index"      | Current page type                                |
 | `currentCollectionHandle` | string                                                      | ""           | Handle of the current collection                 |
 | `collections`             | Array<{title: string, handle: string, url: string}>         | []           | List of available collections with their details |
