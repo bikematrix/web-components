@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@bikematrix/web-components": "file:../../",
+    "@bikematrix/web-components": "^1.1.1",
     "vite-plugin-mkcert": "^1.17.6",
     "vue": "^3.5.13",
     "vue-router": "^4.4.5"

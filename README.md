@@ -478,11 +478,11 @@ function BikeMatrixCore() {
 
 ### Complete Examples
 
-- [HTML](./basic)
-- [NextJS](./nextjs)
-- [PHP](./php)
-- [React](./react)
-- [Vue](./vue)
+- [HTML](./examples/basic)
+- [NextJS](./examples/nextjs)
+- [PHP](./examples/php)
+- [React](./examples/react)
+- [Vue](./examples/vue)
 
 ## Common Scenarios
 
