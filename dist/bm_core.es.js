@@ -3964,7 +3964,7 @@ const Io = class Me {
   async RefreshCollectionPageSkus(e) {
     var n, s;
     let r = document.getElementsByTagName("bikematrix-collectionresult"), a = Array.from(r).map((u) => {
-      const l = u.getAttribute("data-product-skus") || "";
+      const l = this.config.skuField === "barcode" ? u.getAttribute("data-product-barcodes") : this.config.skuField === "metafield" ? u.getAttribute("data-product-metafields") : u.getAttribute("data-product-skus") || "";
       return l == null ? void 0 : l.split(",").filter((p) => !!p);
     }).flat();
     this.config.logLevel === "verbose" && console.log("Refresh Collection Page SKUs. SKUs: ", JSON.stringify(a), null, 2);
@@ -5414,7 +5414,7 @@ function Zi({
     logLevel: _,
     skuField: m
   } = i, y = !!i.pageType && i.pageType === "product", k = m === "barcode" ? r : m === "metafield" ? o : e || "";
-  return _ === "verbose" && (console.log("CollectionResult currentCollectionHandle: ", l), console.log("CollectionResult productId: ", t), console.log("CollectionResult productVariantsSkus: ", e), console.log("CollectionResult skusToCheck: ", k), console.log("CollectionResult BikeSignal.value: " + JSON.stringify(M.value))), oe.value ? s(!0) : M.value && Wi(p, c, f, g, y, t, l) ? Yi(M.value.key, t, k).then(() => {
+  return _ === "verbose" && (console.log("CollectionResult currentCollectionHandle: ", l), console.log("CollectionResult skuField: ", m), console.log("CollectionResult productId: ", t), console.log("CollectionResult skusToCheck: ", k), console.log("CollectionResult BikeSignal.value: " + JSON.stringify(M.value))), oe.value ? s(!0) : M.value && Wi(p, c, f, g, y, t, l) ? Yi(M.value.key, t, k).then(() => {
     s(!0);
   }) : s(!1), _ === "verbose" && console.log("CollectionResult status: ", ie), d(q, {
     children: u && n && d(q, {
