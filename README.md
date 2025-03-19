@@ -243,10 +243,95 @@ Configuration options for BikeMatrix components, organized by feature area.
 | `pageType`                | "collection" \| "product" \| "index" \| "search"            | "index"      | Current page type                                |
 | `currentCollectionHandle` | string                                                      | ""           | Handle of the current collection                 |
 | `collections`             | Array<{title: string, handle: string, url: string}>         | []           | List of available collections with their details |
-| `categories`              | Array<{title: string, text_id: string, collection: string}> | []           | List of product categories and their mappings    |
+| `categories`              | Array<{title: string, text_id: string, collection: string}> | []           | List of product categories and their mappings. See below for a list of all available Categories. Note the 'collection' of the Category must match the Title of one of the items in the collection array (above) for it to show on the Bike Selector as an available Category    |
 | `isHomePage`              | boolean                                                     | false        | Whether current page is home page                |
 | `isSearchPage`            | boolean                                                     | false        | Whether current page is search page              |
 | `logLevel`                | "none" \| "verbose"                                         | "none"       | Logging verbosity level                          |
+
+The list of available Categories is:
+```html
+<script type="application/json" data-bikematrix-config>
+  {
+    "categories": [
+      {
+        "title":"Brake Pads",
+        "text_id":"category_brakepads",
+        "collection": "{{brake_padsCollectionTitle}}"
+      },
+      {
+        "title":"Brake Rotor",
+        "text_id":"category_brakerotor",
+        "collection": "{{brake_rotorCollectionTitle}}"
+      },
+      {
+        "title":"Front Wheel",
+        "text_id":"category_frontwheel",
+        "collection": "{{front_wheelCollectionTitle}}"
+      },
+      {
+        "title":"Rear Wheel",
+        "text_id":"category_rearwheel",
+        "collection": "{{rear_wheelCollectionTitle}}"
+      },
+      {
+        "title":"Wheelset",
+        "text_id":"category_wheelset",
+        "collection": "{{wheelsetCollectionTitle}}"
+      },
+      {
+        "title":"Tyre",
+        "text_id":"category_tyre",
+        "collection": "{{tyreCollectionTitle}}"
+      },
+      {
+        "title":"Tube",
+        "text_id":"category_tube",
+        "collection": "{{tubeCollectionTitle}}"
+      },
+      {
+        "title":"Chain",
+        "text_id":"category_chain",
+        "collection": "{{chainCollectionTitle}}"
+      },
+      {
+        "title":"Cassette",
+        "text_id":"category_cassette",
+        "collection": "{{cassetteCollectionTitle}}"
+      },
+      {
+        "title":"Headset",
+        "text_id":"category_headset",
+        "collection": "{{headsetCollectionTitle}}"
+      },
+      {
+        "title":"Bottom Bracket",
+        "text_id":"category_bottombracket",
+        "collection": "{{bottomBracketCollectionTitle}}"
+      },
+      {
+        "title":"Crankset",
+        "text_id":"category_crankset",
+        "collection": "{{cranksetCollectionTitle}}"
+      },
+      {
+        "title":"Chainring",
+        "text_id":"category_chainring",
+        "collection": "{{chainringCollectionTitle}}"
+      },
+      {
+        "title":"Front Axle",
+        "text_id":"category_frontaxle",
+        "collection": "{{frontAxleCollectionTitle}}"
+      },
+      {
+        "title":"Rear Axle",
+        "text_id":"category_rearaxle",
+        "collection": "{{rearAxleCollectionTitle}}"
+      }
+    ],
+  }
+</script>
+```
 
 #### Bike Selector Configuration
 

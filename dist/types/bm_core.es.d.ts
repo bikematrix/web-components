@@ -1,4 +1,17 @@
 declare interface Bike {
+    bikeSpec: string;
+    brand: string;
+    brandId: number;
+    frameSeries: string;
+    frameSeriesId: number;
+    images: string[];
+    key: string;
+    model: string;
+    modelId: number;
+    name: string;
+    variant: string | null;
+    year: number;
+    _key: string;
 }
 
 declare interface BikeMatrixConfig {
