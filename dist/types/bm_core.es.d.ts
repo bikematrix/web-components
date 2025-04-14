@@ -57,6 +57,7 @@ declare interface BikeMatrixConfig {
     sku?: string;
     productCollections?: string[];
     logLevel?: "none" | "verbose";
+    virtualWorkshop?: boolean;
 }
 
 declare const _default: {

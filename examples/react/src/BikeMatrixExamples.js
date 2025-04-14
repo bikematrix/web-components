@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 export function BikeSelector() {
   return (
     <>
       {/* Bike Selector Button */}
-      <bikematrix-bikon data-color='#000'></bikematrix-bikon>
+      <bikematrix-bikon data-color="#000"></bikematrix-bikon>
       {/* BikeMatrix Components */}
       <bikematrix-bikeselector></bikematrix-bikeselector>
     </>
@@ -14,24 +14,24 @@ export function BikeSelector() {
 export function BikeSelectorBanner() {
   return (
     <bikematrix-bikeselectorbanner
-      data-title='Bike Selector Banner'
-      data-color='#000000'
-      data-full-width='false'
-      data-font-color='#ffffff'
-      data-show='true'
+      data-title="Bike Selector Banner"
+      data-color="#000000"
+      data-full-width="false"
+      data-font-color="#ffffff"
+      data-show="true"
     ></bikematrix-bikeselectorbanner>
   );
 }
 
 export function ProductResult() {
   const config = {
-    productCollections: ['brake-pads'],
+    productCollections: ["brake-pads"]
   };
 
   return (
     <>
-      <bikematrix-productresult data-sku='8022530035613' />
-      <script type='application/json' data-bikematrix-config>
+      <bikematrix-productresult data-sku="8022530035613" />
+      <script type="application/json" data-bikematrix-config>
         {JSON.stringify(config)}
       </script>
     </>
@@ -41,8 +41,8 @@ export function ProductResult() {
 export function CollectionResult() {
   return (
     <bikematrix-collectionresult
-      data-product-id='8022530035613'
-      data-product-skus='8022530035613'
+      data-product-id="8022530035613"
+      data-product-skus="8022530035613"
     />
   );
 }
@@ -50,9 +50,9 @@ export function CollectionResult() {
 export function CompatibleList() {
   return (
     <>
-      <bikematrix-compatiblelist data-title='Compatible Products'>
+      <bikematrix-compatiblelist data-title="Compatible Products">
         <template
-          slot='product-card'
+          slot="product-card"
           dangerouslySetInnerHTML={{
             __html: `
               <div class="bm-compatible-product-wrapper">
@@ -78,27 +78,27 @@ export function CompatibleList() {
                   </div>
                   {{ compatibility }}
               </div>
-            `,
+            `
           }}
         ></template>
       </bikematrix-compatiblelist>
 
       {/* BikeMatrix Config */}
-      <script type='application/json' data-bikematrix-config>
+      <script type="application/json" data-bikematrix-config>
         {JSON.stringify({
-          currentCollectionHandle: 'brake-pads',
-          collectionUrl: '/collection/brake-pads',
+          currentCollectionHandle: "brake-pads",
+          collectionUrl: "/collection/brake-pads",
           products: {
             123: {
-              productUrl: '/product',
-              productTitle: 'Disc Resin Brake Pad 1-Pair',
+              productUrl: "/product",
+              productTitle: "Disc Resin Brake Pad 1-Pair",
               featuredImage:
-                'http://cycleways.co.nz/cdn/shop/products/nzfguo0fiv4gexir5uub.jpg?v=1687794103',
-              price: '$50.00',
-              skus: ['8022530035613'],
-            },
+                "http://cycleways.co.nz/cdn/shop/products/nzfguo0fiv4gexir5uub.jpg?v=1687794103",
+              price: "$50.00",
+              skus: ["8022530035613"]
+            }
             // ... All products in the collection
-          },
+          }
         })}
       </script>
     </>

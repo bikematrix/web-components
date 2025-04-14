@@ -11,8 +11,8 @@ export default function CollectionPage() {
       description: "Description about the product",
       price: "$50.00",
       image: "https://via.placeholder.com/150",
-      url: "/product",
-    },
+      url: "/product"
+    }
   ];
 
   return (

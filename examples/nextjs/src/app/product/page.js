@@ -14,8 +14,8 @@ export default function ProductPage() {
       "Material: Resin compound",
       "Package includes: 1 pair (2 pads)",
       "Compatible with: Shimano hydraulic disc brake systems",
-      "Recommended use: All-weather conditions",
-    ],
+      "Recommended use: All-weather conditions"
+    ]
   };
 
   return (
@@ -48,7 +48,7 @@ export default function ProductPage() {
             {/* Bike Matrix Config - Product Result */}
             <script type="application/json" data-bikematrix-config>
               {JSON.stringify({
-                productCollections: ["brake-pads"],
+                productCollections: ["brake-pads"]
               })}
             </script>
           </div>

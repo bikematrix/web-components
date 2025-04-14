@@ -9,11 +9,11 @@ import mkcert from "vite-plugin-mkcert";
 export default defineConfig({
   plugins: [vue(), vueDevTools(), mkcert()],
   server: {
-    port: 3000,
+    port: 3000
   },
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
+      "@": fileURLToPath(new URL("./src", import.meta.url))
+    }
+  }
 });
