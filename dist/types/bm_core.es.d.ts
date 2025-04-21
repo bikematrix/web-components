@@ -19,6 +19,7 @@ declare interface BikeMatrixConfig {
     skuField?: "sku" | "barcode" | "metafield";
     apiUrl?: string;
     apiKey?: string;
+    apiToken?: string;
     categories?: Array<{
         title: string;
         text_id: string;
