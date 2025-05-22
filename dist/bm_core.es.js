@@ -16860,7 +16860,7 @@ const Gn = {
     <a href="{{productUrl}}">{{productTitle}}{{bm-sort}}</a>
   </div>
   <div class="bm-compatible-product-price">
-    <a href="{{productUrl}}" style="text-decoration: none; color: 'black'">
+    <a href="{{productUrl}}" style="text-decoration: none; color: #000">
       <p>
         <span>{{priceFrom}}</span>
         <strong>{{price}}</strong>
