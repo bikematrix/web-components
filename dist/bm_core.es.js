@@ -19938,7 +19938,7 @@ const Xw = {
     onboarding_linked_components: "Ymmärrä linkitetyt komponentit",
     onboarding_linked_components_description: "Jotkut osat (esim. kampi + alakiinnike) on linkitetty. Jos haluat vaihtaa toisen, saatat joutua poistamaan molemmat – muuten järjestelmä voi merkitä sen yhteensopimattomaksi.",
     onboarding_next: "Seuraavaksi",
-    onboarding_open_bike_build: "Avaa pyörä rakentaa.",
+    onboarding_open_bike_build: "Avaa tekniset tiedot.",
     onboarding_open_bike_build_description: "Kun tarkastelet pyörääsi, laajenna komponenttiryhmät nähdäksesi pyörääsi koskevat komponentit.",
     onboarding_preview: "Esikatsele tai tallenna muutokset",
     onboarding_preview_description: "Voit vaihtaa/poistaa komponentteja ja vahvistaa muutokset tutkiaksesi päivityksiä. Nämä voidaan peruuttaa milloin tahansa ennen tallentamista. Kun olet tallentanut, muutoksia ei voi peruuttaa – ne voidaan vain poistaa tai korvata uudelleen.",
