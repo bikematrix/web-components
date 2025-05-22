@@ -20853,7 +20853,7 @@ yt.use(G8).use(t1).init({
     // order and from where user language should be detected
     order: ["htmlTag", "querystring", "cookie", "localStorage", "sessionStorage", "navigator", "path", "subdomain"]
   },
-  supportedLngs: ["en", "en-GB", "en-US", "de", "fr", "es", "it", "nl"],
+  supportedLngs: ["en", "en-GB", "en-US", "de", "fr", "es", "it", "nl", "fi"],
   fallbackLng: "en-GB",
   interpolation: {
     escapeValue: !1
