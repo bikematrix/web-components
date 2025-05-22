@@ -19891,7 +19891,7 @@ const Xw = {
     category_brakepadsrear: "Jarrupalat Taka",
     category_brakerotorfront: "Jarru roottori edessä",
     category_brakes: "Jarrut",
-    category_chainringspider: "Chainring Spider",
+    category_chainringspider: "Eturattaan Hämähäkki",
     category_cockpit: "Ohjaamo",
     category_drivetrain: "Voimansiirto",
     category_framefork: "Runko & haarukka",
