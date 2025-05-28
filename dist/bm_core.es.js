@@ -21037,10 +21037,10 @@ const Uw = `.variant-selector-wrapper{display:flex;flex-direction:column;border-
         })]
       }), !A && C && g("div", {
         className: `indicator-wrapper ${o === "true" ? "full-width" : ""}`,
-        children: ["// TODO: Translation", g("div", {
+        children: g("div", {
           className: "loading-wrapper",
           children: "No compatible variants"
-        })]
+        })
       }), A && g("div", {
         className: `indicator-wrapper ${o === "true" ? "full-width" : ""}`,
         children: [g("div", {
