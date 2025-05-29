@@ -20965,7 +20965,7 @@ const Uw = `.variant-selector-wrapper{display:flex;flex-direction:column;border-
       return;
     }
     Y(!0);
-    const J = n.split(",");
+    const J = n.split("~");
     let _ = [], R = [];
     J.map((ne) => {
       let ue = ne.split(e || "|");
