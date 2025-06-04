@@ -3896,9 +3896,18 @@ class Wt {
           bikeBrandId: e
         }
       });
-      return r.success ? r.data : (console.error(r.error), []);
+      return r.success ? {
+        data: r.data,
+        success: !0
+      } : (console.error(r.error), {
+        success: !1,
+        error: r.error
+      });
     } else
-      return console.log("No brand selected."), [];
+      return console.log("No brand selected."), {
+        success: !1,
+        error: "No brand selected"
+      };
   }
   async checkSkuCompatibility(e, t, r) {
     if (e && t) {
@@ -4273,7 +4282,11 @@ async function C2(n) {
   let p = [];
   if (!u || (u == null ? void 0 : u.key) !== (c == null ? void 0 : c.key)) {
     const h = await f.getBrandProductCategories(n);
-    p = e.filter((m) => !!m.collection && h.some((P) => P.product_Category.toLowerCase() === m.title.toLowerCase())).map((m) => t.filter((x) => m.collection.split(",").map((z) => z.trim().toLowerCase()).includes(x.title.toLowerCase())).map((x) => ({
+    if (!h.success) {
+      console.log(h.error);
+      return;
+    }
+    p = e.filter((m) => !!m.collection && h.data.some((P) => P.product_Category.toLowerCase() === m.title.toLowerCase())).map((m) => t.filter((x) => m.collection.split(",").map((z) => z.trim().toLowerCase()).includes(x.title.toLowerCase())).map((x) => ({
       title: x.title,
       text_id: m.text_id,
       handle: x.handle,
@@ -4295,7 +4308,9 @@ const k2 = class Aa {
     this.components = [], this.initialized && this.cleanup(), e && (this.config = {
       ...this.config,
       ...e
-    }), this.initializeConfig(), this.service = new Wt(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Tu.value = !0, this.config.logLevel === "verbose" && console.log("BikeMatrixCore initialized");
+    }), this.initializeConfig(), this.service = new Wt(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Tu.value = !0;
+    const t = new Event("BM:Initialized");
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && console.log("BikeMatrixCore initialized");
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
