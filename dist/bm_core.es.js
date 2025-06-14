@@ -4307,7 +4307,7 @@ const z2 = class Aa {
   }
   // Initialize with optional config
   async initialize(e) {
-    this.components = [], this.initialized && this.cleanup(), e && (this.config = {
+    console.log("BikeMatrix WebComponent Version: 1.1.37"), this.components = [], this.initialized && this.cleanup(), e && (this.config = {
       ...this.config,
       ...e
     }), this.initializeConfig(), this.service = new Wt(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Tu.value = !0;
