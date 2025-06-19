@@ -3971,7 +3971,6 @@ class Wt {
         success: !1,
         error: "error_generic getBikeBom"
       };
-    console.log(e);
     const t = this.getEndpoint("bikeBom"), r = await this.makeRequest(t, {
       params: {
         bikeKey: e
@@ -4307,12 +4306,12 @@ const C2 = class Aa {
   }
   // Initialize with optional config
   async initialize(e) {
-    console.log("BikeMatrix WebComponent Version: 1.1.38"), this.components = [], this.initialized && this.cleanup(), e && (this.config = {
+    this.components = [], this.initialized && this.cleanup(), e && (this.config = {
       ...this.config,
       ...e
     }), this.initializeConfig(), this.service = new Wt(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Tu.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && console.log("BikeMatrixCore initialized");
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.39"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -4434,7 +4433,7 @@ const C2 = class Aa {
     this.currentBike === null ? (e = window.bm_selectBikeButton) == null || e.classList.remove("show-selected") : (t = window.bm_selectBikeButton) == null || t.classList.add("show-selected");
   }
   ChangeBike() {
-    this.config.logLevel === "verbose" && console.log("ChangeBike() Method Called"), !(Ut.value === !0 || dr.value === !0) && (Ut.value = !0, dr.value = !0, Ai.value = [], Di.value = [], console.log("ChangeBike updateBikeSignal..."), this.updateBikeSignal().then(() => {
+    this.config.logLevel === "verbose" && console.log("ChangeBike() Method Called"), !(Ut.value === !0 || dr.value === !0) && (Ut.value = !0, dr.value = !0, Ai.value = [], Di.value = [], this.config.logLevel === "verbose" && console.log("ChangeBike updateBikeSignal..."), this.updateBikeSignal().then(() => {
       this.config.logLevel === "verbose" && console.log("Bike Signal Updated: ", JSON.stringify(Ae.value, null, 2)), this.ResetSelectedBikeIndicator(), this.RefreshCompatibleSkus().then(() => {
         document.dispatchEvent(new Event("RefreshCompatibility", {
           bubbles: !0,
@@ -4492,8 +4491,8 @@ const C2 = class Aa {
         const h = await this.service.checkSkusCompatibilityWithResults(Ae.value.key, u, r, {
           signal: f
         });
-        if (this.config.logLevel === "verbose" && console.log("Refresh Collection SKUs from API. SKUs: ", JSON.stringify(h)), console.log("function RefreshCompatibleSkus() operation aborted"), f.aborted) {
-          console.log("function RefreshCompatibleSkus() operation aborted");
+        if (this.config.logLevel === "verbose" && console.log("Refresh Collection SKUs from API. SKUs: ", JSON.stringify(h)), f.aborted) {
+          this.config.logLevel === "verbose" && console.log("function RefreshCompatibleSkus() operation aborted");
           return;
         }
         (l = h.data) != null && l.errors ? (ss.value = !0, this.config.logLevel === "verbose" && console.log("Compatible List Error: ", h.data.errors)) : (sessionStorage.setItem(e, JSON.stringify(h.data)), Ai.value = h.data);
@@ -8321,7 +8320,7 @@ const Dy = () => {
   });
 }, Sc = () => {
   JSON.parse(sessionStorage.getItem("bm_categories")).collections.map((e) => {
-    console.log(`${Ae.value.key}:${e.handle}:v2`), sessionStorage.removeItem(`${Ae.value.key}:${e.handle}:v2`);
+    sessionStorage.removeItem(`${Ae.value.key}:${e.handle}:v2`);
   });
 }, Mc = {
   frame: "Frame_ID",
@@ -8507,7 +8506,7 @@ const Dy = () => {
               className: "type-wrapper",
               children: g("h4", {
                 className: "type font-semibold capitalize",
-                children: [console.log(c), i(gh[c])]
+                children: i(gh[c])
               })
             }), g("div", {
               className: `part-wrapper ${f != null && f.swap && !t ? "can-hover" : ""}`,
@@ -11815,7 +11814,7 @@ const yw = () => {
             number: m.number
           })
         }, P))
-      }), console.log(i, t.length), g("div", {
+      }), g("div", {
         className: "button-wrapper",
         children: g(jr, {
           onClick: () => i < t.length - 1 ? r.current.slideNext() : b(),
