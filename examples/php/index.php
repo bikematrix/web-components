@@ -84,6 +84,7 @@ $productResultConfig = [
         <h3 class="mb-2 font-semibold">Banner</h3>
         <bikematrix-bikeselectorbanner
           data-title="Bike Selector Banner"
+          data-mobile-title="Bike Selector Banner"
           data-color="#000000"
           data-full-width="false"
           data-font-color="#ffffff"

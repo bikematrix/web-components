@@ -397,6 +397,7 @@ Displays the currently selected bike.
 ```html
 <bikematrix-bikeselectorbanner
   data-title="Bike Selector Banner"
+  data-mobile-title="Bike Selector Banner"
   data-color="#000000"
   data-full-width="false"
   data-font-color="#ffffff"
@@ -407,6 +408,7 @@ Displays the currently selected bike.
 Attributes:
 
 - `data-title`: Banner title
+- `data-mobile-title`: Banner title when viewed on mobile
 - `data-color`: Background color
 - `data-full-width`: Whether banner spans full width
 - `data-font-color`: Text color

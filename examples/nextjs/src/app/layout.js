@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
         <bikematrix-bikeselector></bikematrix-bikeselector>
         <bikematrix-bikeselectorbanner
           data-title="Bike Selector Banner"
+          data-mobile-title="Bike Selector Banner"
           data-color="#000000"
           data-full-width="false"
           data-font-color="#ffffff"
