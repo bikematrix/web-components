@@ -4423,7 +4423,7 @@ const H2 = class Da {
       ...e
     }), this.initializeConfig(), this.service = new Wt(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Su.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.45"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.46"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -5703,7 +5703,7 @@ function r6() {
         _key: `${L.year}-${(D = L.spec) == null ? void 0 : D.replace(" ", "")}`
       }, p(!1), Xe("/confirm");
     } else
-      m("virtualworkshop_add_by_error"), p(!1);
+      m("error_get_bike_bom"), p(!1);
   };
   return g(ie, {
     children: [g("div", {
