@@ -16,7 +16,7 @@ declare interface Bike {
 
 declare interface BikeMatrixConfig {
     isShopify?: boolean;
-    skuField?: "sku" | "barcode" | "metafield";
+    skuField?: 'sku' | 'barcode' | 'metafield';
     apiUrl?: string;
     apiKey?: string;
     apiToken?: string;
@@ -31,7 +31,7 @@ declare interface BikeMatrixConfig {
         url: string;
     }>;
     currentCollectionHandle?: string;
-    pageType?: "collection" | "product" | "index" | "search";
+    pageType?: 'collection' | 'product' | 'index' | 'search';
     showHomePageCollection?: boolean;
     showSearchPageCollection?: boolean;
     designMode?: boolean;
@@ -57,8 +57,9 @@ declare interface BikeMatrixConfig {
     showCompatibleList?: boolean;
     sku?: string;
     productCollections?: string[];
-    logLevel?: "none" | "verbose";
+    logLevel?: 'none' | 'verbose';
     virtualWorkshop?: boolean;
+    internalLink?: string;
 }
 
 declare const _default: {
