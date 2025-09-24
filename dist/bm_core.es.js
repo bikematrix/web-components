@@ -4425,7 +4425,7 @@ const H2 = class Oa {
       ...e
     }), this.initializeConfig(), this.service = new Ct(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Su.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.48"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.49"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -4512,10 +4512,10 @@ const H2 = class Oa {
           composed: !0
         }));
       });
-    }), document.addEventListener("on:facet-filters:updated", this.handleRefreshCompatibleSkus.bind(this)), document.addEventListener("BikeChanged", this.handleBikeChanged.bind(this));
+    }), document.addEventListener("on:facet-filters:updated", this.handleRefreshCompatibleSkus.bind(this)), document.addEventListener("BikeChanging", this.handleBikeChanging.bind(this));
   }
   removeEventListeners() {
-    document.removeEventListener("BikeMatrix:RefreshCompatibleSkus", this.handleRefreshCompatibleSkus), document.removeEventListener("on:facet-filters:updated", this.handleRefreshCompatibleSkus), document.removeEventListener("BikeChanged", this.handleBikeChanged);
+    document.removeEventListener("BikeMatrix:RefreshCompatibleSkus", this.handleRefreshCompatibleSkus), document.removeEventListener("on:facet-filters:updated", this.handleRefreshCompatibleSkus), document.removeEventListener("BikeChanging", this.handleBikeChanging);
   }
   async handleRefreshCompatibleSkus(e) {
     this.RefreshCompatibleSkus().then(() => {
@@ -4525,8 +4525,8 @@ const H2 = class Oa {
       }));
     });
   }
-  async handleBikeChanged(e) {
-    this.config.logLevel === "verbose" && console.log("Listener BikeChanged..."), this.ChangeBike();
+  async handleBikeChanging(e) {
+    this.config.logLevel === "verbose" && console.log("Listener BikeChanging (pre) ..."), this.ChangeBike();
   }
   getConfig() {
     return this.config;
@@ -4550,6 +4550,9 @@ const H2 = class Oa {
     this.config.logLevel === "verbose" && console.log("ChangeBike() Method Called"), !(cr.value === !0 || yr.value === !0) && (cr.value = !0, yr.value = !0, Di.value = [], Oi.value = [], this.config.logLevel === "verbose" && console.log("ChangeBike updateBikeSignal..."), this.updateBikeSignal().then(() => {
       this.config.logLevel === "verbose" && console.log("Bike Signal Updated: ", JSON.stringify(Pe.value, null, 2)), this.ResetSelectedBikeIndicator(), this.RefreshCompatibleSkus().then(() => {
         document.dispatchEvent(new Event("RefreshCompatibility", {
+          bubbles: !0,
+          composed: !0
+        })), document.dispatchEvent(new Event("BikeChanged", {
           bubbles: !0,
           composed: !0
         }));
@@ -4964,7 +4967,7 @@ const lu = {
   }, D = (F) => {
     (t == null ? void 0 : t.key) === F && r(null), o([...(i || []).filter((M) => !!M.key && M.key !== F)]);
   }, O = () => {
-    e.logLevel === "verbose" && console.log("Dispatch BikeChanged..."), document.dispatchEvent(new Event("BikeChanged", {
+    e.logLevel === "verbose" && console.log("Dispatch BikeChanging (pre-change)..."), document.dispatchEvent(new Event("BikeChanging", {
       bubbles: !0,
       composed: !0
     }));
@@ -6142,7 +6145,7 @@ function l6() {
   } = Mt(), [t, r] = K(!0), [i, o] = K(), {
     t: l
   } = De(), u = () => {
-    if (e.length > 0) {
+    if (e && e.length > 0) {
       let c = [];
       e.map((f) => {
         c.some((p) => p.text_id === f.text_id) || c.push(f);
