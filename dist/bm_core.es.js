@@ -4356,7 +4356,7 @@ class Ct {
         // Explicitly set headers after spreading options (as mergedHeaders will override options.headers)
       };
       t.signal && (u.signal = t.signal);
-      const c = await fetch(r, u), f = await c.json().catch(() => {
+      const c = await fetch(r == null ? void 0 : r.href, u), f = await c.json().catch(() => {
         throw new Error("Request failed: " + (c.statusText || "Status" + c.status));
       });
       f.status === 400 || f.statusCode === 404 ? o = {
@@ -4425,7 +4425,7 @@ const H2 = class Oa {
       ...e
     }), this.initializeConfig(), this.service = new Ct(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Su.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.49"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.50"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
