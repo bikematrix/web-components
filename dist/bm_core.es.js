@@ -4425,7 +4425,7 @@ const H2 = class Oa {
       ...e
     }), this.initializeConfig(), this.service = new Ct(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Su.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.1.50"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.0"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -4584,7 +4584,7 @@ const H2 = class Oa {
     }).flat();
     this.config.logLevel === "verbose" && console.log("Refresh Collection Page SKUs. SKUs: ", JSON.stringify(i), null, 2);
     var o = ((l = Ii()) == null ? void 0 : l.language) || "en-GB";
-    if (i) {
+    if (i && i.length > 0) {
       const c = await this.service.checkSkusCompatibilityWithResults((u = Pe.value) == null ? void 0 : u.key, i, o);
       c.success ? Oi.value = c.data : (us.value = !0, this.config.logLevel === "verbose" && console.log("Compatible List Error: ", c.logError));
     } else
@@ -12987,6 +12987,8 @@ function Vw({
   }), {
     t: h
   } = De(), [b, m] = K(!1), P = n || i.sku, [x, A] = K(null);
+  if (n === "*")
+    return i.logLevel === "verbose" && console.log("Early return as prouduct is blacklisted"), g(ie, {});
   i.internalLink && A(i.internalLink);
   const z = jr(() => yr.value || b, [yr.value, b]), w = !!r.getActiveSubscription(), k = async () => {
     var B, L, T, X, Z, W, N;
@@ -21615,7 +21617,7 @@ const $x = `.variant-selector-wrapper{display:flex;flex-direction:column;border-
         ref: t,
         children: g("div", {
           className: "information",
-          children: [!n && o("variantselector_help_text"), n && o("variantselector_help_text_showall"), e && o("variantselector_help_text_clickable")]
+          children: [!n && o("variantselector_help_text"), " ", n && o("variantselector_help_text_showall"), " ", e && o("variantselector_help_text_clickable")]
         })
       })]
     })]
@@ -21869,10 +21871,10 @@ const $x = `.variant-selector-wrapper{display:flex;flex-direction:column;border-
     let J = [], re = [];
     if (V.map((U) => {
       let $ = U.split(e || "|");
-      J.push($[0] !== "-" ? $[0] : $[2]), re.push({
+      J.push($[0].length > 2 ? $[0] : $[2]), re.push({
         title: $[1],
         id: $[2],
-        sku: $[0] !== "-" ? $[0] : $[2],
+        sku: $[0].length > 2 ? $[0] : $[2],
         index: parseInt($[3])
       });
     }), P) {
