@@ -4425,7 +4425,7 @@ const H2 = class Oa {
       ...e
     }), this.initializeConfig(), this.service = new Ct(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Su.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.1"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.2"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -5223,14 +5223,14 @@ const _7 = (n) => /* @__PURE__ */ te("svg", { width: 17, height: 17, viewBox: "0
     shifter_LH: _,
     shift_Brake_Combo_RH: _,
     shift_Brake_Combo_LH: _,
-    brake_Lever_RH: _,
-    brake_Lever_LH: _,
     shifter_Adapter_RH: _,
     shifter_Adapter_LH: _
   },
   brakes: {
     brake_Caliper_Front: _,
     brake_Caliper_Rear: _,
+    brake_Lever_RH: _,
+    brake_Lever_LH: _,
     brake_Pads_Front: _,
     brake_Pads_Rear: _,
     brake_Rotor_Front: _,
@@ -5285,14 +5285,14 @@ const _7 = (n) => /* @__PURE__ */ te("svg", { width: 17, height: 17, viewBox: "0
     shifter_LH: _,
     shift_Brake_Combo_RH: _,
     shift_Brake_Combo_LH: _,
-    brake_Lever_RH: _,
-    brake_Lever_LH: _,
     shifter_Adapter_RH: _,
     shifter_Adapter_LH: _
   },
   brakes: {
     brake_Caliper_Front: _,
     brake_Caliper_Rear: _,
+    brake_Lever_RH: _,
+    brake_Lever_LH: _,
     brake_Pads_Front: _,
     brake_Pads_Rear: _,
     brake_Rotor_Front: _,
