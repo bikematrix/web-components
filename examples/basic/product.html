@@ -12,15 +12,13 @@
     >
       <!-- Test Components -->
       <div class="mt-8 space-y-4">
-        <h2 class="text-xl font-bold">Test Components - Home</h2>
+        <h2 class="text-xl font-bold"><a href="index.html">Home</a> | Test Components - Product Page (PDP)</h2>
 
         <!-- Bike Matrix Core Config -->
         <script type="application/json" data-bikematrix-config>
         {
             "apiUrl": "https://api-staging.bikematrix.io/bike/v3/",
             "apiKey": "YOUR_API_KEY",
-
-            "pageType": "index",
 
             "collections": [
                 {
@@ -121,24 +119,37 @@
           <bikematrix-bikeselector></bikematrix-bikeselector>
         </div>
 
-        <!-- Bike Selector Banner -->
         <div class="p-4 border rounded">
-          <h3 class="mb-2 font-semibold">Banner</h3>
-          <bikematrix-bikeselectorbanner
-            data-title="Bike Selector Banner"
-            data-mobile-title="Bike Selector Banner"
-            data-color="#000000"
-            data-full-width="false"
-            data-font-color="#ffffff"
-            data-show="true"
-          ></bikematrix-bikeselectorbanner>
+          <div>
+            <img src="http://cycleways.co.nz/cdn/shop/products/dc1445316cf6891dbc95bc05968c12cc.jpg?v=1690840429" width="80px" alt="" loading="lazy">
+          </div>
+          <div>
+            <p>SRAM Rotor Centerline CenterLock</p>
+          </div>
+          <div>
+            <p><strong>From $95.00</strong></p>
+          </div>
         </div>
 
-        <!-- Brake Pads/Rotors -->
+        <!-- Product Result -->
+        <!-- Not compatible with 2024 Trek Fuel Ex 9.8 (Bike Key: e4fb7832-c3db-4113-b0e3-27c35981bcc7) -->
+        <!-- Compatible with 2024 Trek Checkpoint SLR 7 (Bike Key: a4293950-9205-47d0-b1bb-5483a6f48628) -->
         <div class="p-4 border rounded">
-          <p class="mb-2 font-semibold"><a href="collection.html">Collections - Rotors Collection</a></p>
-          <p class="mb-2 font-semibold"><a href="product.html">Products - SRAM Rotor Centerline CenterLock Rotor</a></p>
+          <h3 class="mb-2 font-semibold">Product Result</h3>
+          <bikematrix-productresult data-sku="0710845917523" />
+          <script type="application/json" data-bikematrix-config>
+            {
+              "productCollections": ["rotors-1"]
+            }
+          </script>
         </div>
+
+        <bikematrix-variantselector data-title="Options"
+          data-variants="0710845917523|SRAM Rotor Centerline CenterLock 160mm Black Rounded (includes internal tooled lockring)|48797932814613|1~710845917530|SRAM Rotor Centerline CenterLock 180mm Black Rounded (includes external tooled lockring)|48797932847381|2~710845917547|SRAM Rotor Centerline CenterLock 200mm Black Rounded (includes external tooled lockring)|48797932880149|3"
+          data-delimiter="|" data-showall="true" data-clickable="true" data-full-width="true" data-no-variants="false"
+          data-show="" data-route-variant="false" data-padding-top="16" data-padding-bottom="16" data-override="true"
+          data-sku="0710845917523">
+        </bikematrix-variantselector>
 
       </div>
     </div>

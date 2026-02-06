@@ -87,7 +87,7 @@ Alternatively, include the script directly in your HTML:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.1/dist/bm_core.js"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.2/dist/bm_core.js"
 ></script>
 ```
 
@@ -120,7 +120,7 @@ Include the script directly in your HTML:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.1/dist/bm_core.js"
+  src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.2/dist/bm_core.js"
 ></script>
 ```
 
@@ -133,7 +133,7 @@ Add the core configuration block to your HTML:
 ```html
 <script type="application/json" data-bikematrix-config>
   {
-    "apiUrl": "https://api-staging.bikematrix.io/bike/v2/",
+    "apiUrl": "https://api-staging.bikematrix.io/bike/v3/",
     "apiKey": "YOUR_API_KEY",
     "pageType": "collection",
     "currentCollectionHandle": "brake-pads",
@@ -206,7 +206,7 @@ BikeMatrix is configured using a JSON configuration block in your HTML:
 ```html
 <script type="application/json" data-bikematrix-config>
   {
-    "apiUrl": "https://api-staging.bikematrix.io/bike/v2/",
+    "apiUrl": "https://api-staging.bikematrix.io/bike/v3/",
     "apiKey": "YOUR_API_KEY",
     "pageType": "collection",
     "currentCollectionHandle": "brake-pads",
