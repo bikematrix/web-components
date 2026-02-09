@@ -4425,7 +4425,7 @@ const D2 = class Oa {
       ...e
     }), this.initializeConfig(), this.service = new Ct(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Su.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.4"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.5"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -13241,7 +13241,7 @@ const Jw = async (n, e, t, r) => {
     const p = Oi.value.find((h) => h.sku === f.trim());
     i.push(p);
   }
-  const o = i.some((f) => (f == null ? void 0 : f.compatible) === !0 && (f == null ? void 0 : f.warning) === !1), l = i.some((f) => (f == null ? void 0 : f.compatible) === !0 && (f == null ? void 0 : f.warning) === !0), u = i.some((f) => (f == null ? void 0 : f.compatible) === !1);
+  const o = i.some((f) => (f == null ? void 0 : f.compatible) === !0 && !(f != null && f.warning)), l = i.some((f) => (f == null ? void 0 : f.compatible) === !0 && (f == null ? void 0 : f.warning)), u = i.some((f) => (f == null ? void 0 : f.compatible) === !1);
   o ? cr = {
     type: "compatible",
     ...Ci.compatible
