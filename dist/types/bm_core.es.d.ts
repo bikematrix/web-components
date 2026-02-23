@@ -74,6 +74,7 @@ declare const _default: {
     getActiveSubscription: () => boolean;
     updateConfig: (config: Partial<BikeMatrixConfig>) => void;
     updateSku: (sku: string) => void;
+    updateCompatibleList: () => void;
 };
 export default _default;
 
