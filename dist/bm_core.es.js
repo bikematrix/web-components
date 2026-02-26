@@ -4425,7 +4425,7 @@ const sl = class Hr {
       ...e
     }), this.initializeConfig(), this.service = new Se(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Ha.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.9"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.10"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -13674,6 +13674,7 @@ function Mu({
         },
         onClick: e ? () => {
         } : () => vr(),
+        "aria-label": "Bike Matrix Bike Selector",
         children: p("svg", {
           xmlns: "http://www.w3.org/2000/svg",
           viewBox: "0 0 48 48",
