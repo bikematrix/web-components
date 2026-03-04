@@ -4425,7 +4425,7 @@ const sl = class Hr {
       ...e
     }), this.initializeConfig(), this.service = new Se(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Ha.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.10"), console.log("BikeMatrixCore initialized"));
+    document.dispatchEvent(t), this.config.logLevel === "verbose" && (console.log("BikeMatrix WebComponent Version: 1.2.11"), console.log("BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -4768,7 +4768,7 @@ function Qe({
     children: [!r && p("p", {
       class: "text-gray-950 px-4 text-base font-normal font-nunito leading-tight ",
       children: o ? p(q, {
-        children: n ? `${a.bike_Brand} ${a.year} ${a.spec}` : a.name ? a.name : `${a.brand} ${a.year} ${a.bikeSpec} ${a.variant ? a.variant : ""}`
+        children: n ? `${a.bike_Brand} ${a.year} ${a.spec}` : a.name && a.isCustom ? a.name : `${a.brand} ${a.year} ${a.bikeSpec} ${a.variant ? a.variant : ""}`
       }) : p(q, {
         children: n ? a.bike_Name : a.name
       })
