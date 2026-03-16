@@ -347,6 +347,7 @@ The list of available Categories is:
 | `collectionUrl`               | string                       | ""      | URL for the current collection     |
 | `compatiblityListCurrentPage` | number                       | 0       | Current page in compatibility list |
 | `showCompatibleList`          | boolean                      | true    | Whether to show compatibility list |
+| `delayCompatibleListInitialization`     | boolean                      | false   | If true, the compatible list loading will continue until RefreshCompatibleListSkus is called |
 
 #### Collection Result Configuration
 

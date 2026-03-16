@@ -55,9 +55,10 @@ declare interface BikeMatrixConfig {
     collectionUrl?: string;
     compatiblityListCurrentPage?: number;
     showCompatibleList?: boolean;
+    delayCompatibleListInitialization?: boolean;
     sku?: string;
     productCollections?: string[];
-    logLevel?: 'none' | 'verbose';
+    logLevel?: 'none' | 'verbose' | 'core';
     virtualWorkshop?: boolean;
     internalLink?: string;
 }
