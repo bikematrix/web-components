@@ -61,6 +61,8 @@ declare interface BikeMatrixConfig {
     logLevel?: 'none' | 'verbose' | 'core';
     virtualWorkshop?: boolean;
     internalLink?: string;
+    showBrowseCategoryButtons?: boolean;
+    browseCompatibilityUrl?: string;
 }
 
 declare const _default: {

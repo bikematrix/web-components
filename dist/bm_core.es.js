@@ -1425,7 +1425,10 @@ const Ga = Ce(!1), Y = Ce(null), pr = Ce([]), lr = Ce(!1), De = Ce(!1), fr = Ce(
   // Virtual Workshop
   virtualWorkshop: !0,
   // Internal shop link
-  internalLink: ""
+  internalLink: "",
+  // Browse Compatibility settings
+  showBrowseCategoryButtons: !0,
+  browseCompatibilityUrl: ""
 }, Te = function(i) {
   return new URL(i, nd).toString();
 };
@@ -4426,7 +4429,7 @@ const ll = class Kr {
       ...e
     }), this.initializeConfig(), this.service = new Ee(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, Ga.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.2"), console.log("Core: BikeMatrixCore initialized"));
+    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.3"), console.log("Core: BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -7554,7 +7557,7 @@ function ff() {
       })]
     }), !!(a != null && a.length) && !!(t != null && t.key) && p("button", {
       onClick: (v) => {
-        v.preventDefault(), Q("/browse");
+        v.preventDefault(), !i.showBrowseCategoryButtons && i.browseCompatibilityUrl ? window.location.href = i.browseCompatibilityUrl : Q("/browse");
       },
       class: Z("duration-300 sticky bottom-4 transition-colors mt-4 rounded-xl p-3 w-full flex justify-center items-center", a.length ? "bg-gray-950 text-white" : "bg-gray-200 text-gray-800"),
       children: l("bikeselector_home_browse_btn")
