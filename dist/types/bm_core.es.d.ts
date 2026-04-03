@@ -55,14 +55,11 @@ declare interface BikeMatrixConfig {
     collectionUrl?: string;
     compatiblityListCurrentPage?: number;
     showCompatibleList?: boolean;
-    delayCompatibleListInitialization?: boolean;
     sku?: string;
     productCollections?: string[];
-    logLevel?: 'none' | 'verbose' | 'core';
+    logLevel?: 'none' | 'verbose';
     virtualWorkshop?: boolean;
     internalLink?: string;
-    showBrowseCategoryButtons?: boolean;
-    browseCompatibilityUrl?: string;
 }
 
 declare const _default: {
@@ -77,7 +74,6 @@ declare const _default: {
     getActiveSubscription: () => boolean;
     updateConfig: (config: Partial<BikeMatrixConfig>) => void;
     updateSku: (sku: string) => void;
-    updateCompatibleList: () => void;
 };
 export default _default;
 
