@@ -56,7 +56,7 @@ function App() {
       <script type="application/json" data-bikematrix-config>
         {JSON.stringify({
           logLevel: "verbose",
-          apiUrl: "https://api-staging.bikematrix.io/bike/v2/",
+          apiUrl: "https://api-staging.bikematrix.io/bike/v3/",
           apiKey: "YOUR_API_KEY",
           pageType: "collection",
           collections: [

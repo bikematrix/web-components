@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default function BikeMatrixCompatibleList() {
   // Custom compatible list product card template
@@ -25,7 +25,7 @@ export default function BikeMatrixCompatibleList() {
             </a>
         </div>
         {{ compatibility }}
-    </div>`;
+    </div>`
 
   return (
     <>
@@ -35,29 +35,28 @@ export default function BikeMatrixCompatibleList() {
         <template
           slot="product-card"
           dangerouslySetInnerHTML={{
-            __html: productCardHtml
+            __html: productCardHtml,
           }}
         ></template>
       </bikematrix-compatiblelist>
-
       {/* Bike Matrix Config - Compatible List */}
       <script type="application/json" data-bikematrix-config>
         {JSON.stringify({
-          currentCollectionHandle: "brake-pads",
-          collectionUrl: "/collection/brake-pads",
+          currentCollectionHandle: 'brake-pads',
+          collectionUrl: '/collection/brake-pads',
           products: {
             123: {
-              productUrl: "/product",
-              productTitle: "Disc Resin Brake Pad 1-Pair",
+              productUrl: '/product',
+              productTitle: 'Disc Resin Brake Pad 1-Pair',
               featuredImage:
-                "http://cycleways.co.nz/cdn/shop/products/nzfguo0fiv4gexir5uub.jpg?v=1687794103",
-              price: "$50.00",
-              skus: ["8022530035613"]
-            }
+                'http://cycleways.co.nz/cdn/shop/products/nzfguo0fiv4gexir5uub.jpg?v=1687794103',
+              price: '$50.00',
+              skus: ['8022530035613'],
+            },
             // ... All products in the collection
-          }
+          },
         })}
       </script>
     </>
-  );
+  )
 }

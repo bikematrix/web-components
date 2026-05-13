@@ -6,7 +6,7 @@ $productSkus = ['8022530035613'];
 
 // Main Bike Matrix Config
 $bikeMatrixConfig = [
-  "apiUrl" => "https://api-staging.bikematrix.io/bike/v2/",
+  "apiUrl" => "https://api-staging.bikematrix.io/bike/v3/",
   "apiKey" => "YOUR_API_KEY",
   "pageType" => "collection",
   "currentCollectionHandle" => "brake-pads",
@@ -145,7 +145,7 @@ $productResultConfig = [
   </div>
 
   <!-- Bike Matrix Core Script -->
-  <script src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.1/dist/bm_core.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@bikematrix/web-components@1.2/dist/bm_core.js" type="text/javascript"></script>
 </body>
 
 </html>

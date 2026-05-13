@@ -12,15 +12,13 @@
     >
       <!-- Test Components -->
       <div class="mt-8 space-y-4">
-        <h2 class="text-xl font-bold">Test Components - Home</h2>
+        <h2 class="text-xl font-bold"><a href="index.html">Home</a> | Test Components - Collection Page (PLP)</h2>
 
         <!-- Bike Matrix Core Config -->
         <script type="application/json" data-bikematrix-config>
         {
             "apiUrl": "https://api-staging.bikematrix.io/bike/v3/",
             "apiKey": "YOUR_API_KEY",
-
-            "pageType": "index",
 
             "collections": [
                 {
@@ -114,6 +112,15 @@
         }
         </script>
 
+        <!-- Bike Matrix Current Collection Page Config -->
+        <script type="application/json" data-bikematrix-config>
+        {
+          "pageType": "collection",
+          "currentCollectionHandle": "rotors-1"
+        }
+        </script>
+
+
         <!-- Bike Selector -->
         <div class="p-4 border rounded">
           <h3 class="mb-2 font-semibold">Bike Selector</h3>
@@ -134,12 +141,80 @@
           ></bikematrix-bikeselectorbanner>
         </div>
 
-        <!-- Brake Pads/Rotors -->
+        <!-- Compatible List -->
+        <!-- When testing - don't forget to clear the Session Storage: Dev Tools -> Application -> Session Storage (or just open a new Tab) -->
         <div class="p-4 border rounded">
-          <p class="mb-2 font-semibold"><a href="collection.html">Collections - Rotors Collection</a></p>
-          <p class="mb-2 font-semibold"><a href="product.html">Products - SRAM Rotor Centerline CenterLock Rotor</a></p>
+          <h3 class="mb-2 font-semibold">Compatible List</h3>
+          <bikematrix-compatiblelist data-title="Compatible products">
+            <template slot="product-card">
+              <div class="bm-compatible-product-wrapper">
+                <div class="bm-compatible-product-image">
+                  <a href="{{productUrl}}">
+                    <img
+                      src="{{featuredImage}}"
+                      width="80px"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+                <div class="bm-compatible-product-title">
+                  <a href="{{productUrl}}">{{ productTitle }}</a>
+                </div>
+                <div class="bm-compatible-product-price">
+                  <a href="{{productUrl}}" style="text-decoration: none">
+                    <p>
+                      <strong>{{ price }}</strong>
+                    </p>
+                  </a>
+                </div>
+                {{ compatibility }}
+              </div>
+            </template>
+          </bikematrix-compatiblelist>
+          <script type="application/json" data-bikematrix-config>
+            {
+              "collectionUrl": "/collection/brake-rotors",
+              "products": {
+                "8420338368789": {
+                  "productUrl": "/collections/brake-rotors/products/sram-centreline-rotors",
+                  "productTitle":"SRAM Centreline Rotors",
+                  "featuredImage": "http://cycleways.co.nz/cdn/shop/products/dc1445316cf6891dbc95bc05968c12cc.jpg?v=1690840429",
+                  "price": "From $95.00",
+                  "skus": ["710845805509","710845805516","710845838958","00.5018.037.014","00.5018.037.015"]
+                },
+                "8420045619477": {
+                  "productUrl": "/collections/brake-rotors/products/sram-centreline-centrelock-rotors",
+                  "productTitle":"SRAM Centreline Centrelock Rotors",
+                  "featuredImage": "http://cycleways.co.nz/cdn/shop/products/5b98f4b9d27f45e50535d63701c1a8be.jpg?v=1690836703",
+                  "price": "From $95.00",
+                  "skus": ["0710845917523","710845917530","710845917547"]
+                }                
+              }
+            }
+          </script>
         </div>
 
+        <!-- Collection Result -->
+        <div class="p-4 border rounded">
+          <h3 class="mb-2 font-semibold">Collection Result</h3>
+          <div>
+            <!-- Compatible with 2024 Trek Fuel Ex 9.8 (Bike Key: e4fb7832-c3db-4113-b0e3-27c35981bcc7) -->
+            <p>SRAM Centreline Rotors</p>
+            <bikematrix-collectionresult
+              data-product-id="8420338368789"
+              data-product-skus="710845805509,710845805516,710845838958,00.5018.037.014,00.5018.037.015"
+            />
+          </div>
+          <div>
+            <!-- Compatible with 2024 Trek Checkpoint SLR 7 (Bike Key: a4293950-9205-47d0-b1bb-5483a6f48628) -->
+            <p>SRAM Centreline Centrelock Rotors</p>
+            <bikematrix-collectionresult
+              data-product-id="8420045619477"
+              data-product-skus="0710845917523,710845917530,710845917547"
+            />
+          </div>          
+        </div>
       </div>
     </div>
 
