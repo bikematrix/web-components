@@ -4730,7 +4730,7 @@ class Se {
       ...this._apiToken && {
         "bm-app-token": this._apiToken
       },
-      "bm-sdk-version": "1.3.8"
+      "bm-sdk-version": "1.3.9"
     };
     typeof t.params == "object" && (Object.keys(t.params).forEach((o) => {
       t.params[o] && i.searchParams.set(o, t.params[o]);
@@ -6521,7 +6521,7 @@ const Hp = Be(`bm_translation_${Fd}.json`), Gp = async () => {
       ...e
     }), this.initializeConfig(), this.service = new Se(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), await Gp(), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && console.log(`Core: Resolved Language: ${_e.resolvedLanguage}`), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, ns.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.8"), console.log("Core: BikeMatrixCore initialized"));
+    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.9"), console.log("Core: BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -15206,7 +15206,7 @@ function Y1({
     var A;
     return (A = Z.value) == null ? void 0 : A.compatibleCollections.some((C) => C.handle === k);
   }))
-    return n.logLevel === "verbose" && console.log("No product collection available"), console.log("What the hell"), p($, {});
+    return n.logLevel === "verbose" && console.log("No product collection available"), p($, {});
   n.internalLink && w(n.internalLink);
   const b = ut(() => Je.value || h, [Je.value, h]), m = !!i.getActiveSubscription(), x = async () => {
     var A, C, D, S, T, L, F;
