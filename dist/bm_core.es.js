@@ -4730,7 +4730,7 @@ class Se {
       ...this._apiToken && {
         "bm-app-token": this._apiToken
       },
-      "bm-sdk-version": "1.3.10"
+      "bm-sdk-version": "1.3.11"
     };
     typeof t.params == "object" && (Object.keys(t.params).forEach((o) => {
       t.params[o] && r.searchParams.set(o, t.params[o]);
@@ -6522,7 +6522,7 @@ const Hp = Be(`bm_translation_${Fd}.json`), Gp = async () => {
       ...e
     }), this.initializeConfig(), this.service = new Se(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), await Gp(), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && console.log(`Core: Resolved Language: ${ge.resolvedLanguage}`), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, ns.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.10"), console.log("Core: BikeMatrixCore initialized"));
+    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.11"), console.log("Core: BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -8954,14 +8954,16 @@ function tt({
           children: p("img", {
             class: "max-w-full pointer-events-none mx-auto max-h-full h-auto w-auto",
             src: A,
-            alt: A
+            alt: A,
+            onError: (D) => D.currentTarget.src = "https://cdn.bikematrix.io/bike.png"
           })
         }, C)), o && p("div", {
           class: "w-full h-full snap-center flex items-center flex-none",
           children: p("img", {
             class: "max-w-full pointer-events-none mx-auto max-h-full h-auto w-auto",
             src: `https://imagestore.bikematrix.io/${n.bike_Reference}/400-${n.bike_Thumbnail}`,
-            alt: n.bike_Reference
+            alt: n.bike_Reference,
+            onError: (A) => A.currentTarget.src = "https://cdn.bikematrix.io/bike.png"
           })
         })]
       }), p($, {
