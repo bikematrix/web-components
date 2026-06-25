@@ -4727,7 +4727,7 @@ class Se {
       ...this._apiToken && {
         "bm-app-token": this._apiToken
       },
-      "bm-sdk-version": "1.3.12",
+      "bm-sdk-version": "1.3.13",
       // Added globally so request origin context is available on every endpoint.
       "bm-url": window.location.href,
       // Added globally so all endpoints can be tied to the same page-load event.
@@ -6537,7 +6537,7 @@ const Yp = Be(`bm_translation_${Fd}.json`), Kp = async () => {
       ...e
     }), this.initializeConfig(), this.service = new Se(this.config.apiUrl, this.config.apiKey, this.config.apiToken, this.config.isShopify), this.initializeActiveSubscription(), localStorage.bm_currentBike && (this.currentBike = JSON.parse(localStorage.bm_currentBike)), await Kp(), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && console.log(`Core: Resolved Language: ${ge.resolvedLanguage}`), this.setupEventListeners(), this.registerComponents(), this.initialized = !0, rs.value = !0;
     const t = new Event("BM:Initialized");
-    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.12"), console.log("Core: BikeMatrixCore initialized"));
+    document.dispatchEvent(t), (this.config.logLevel === "verbose" || this.config.logLevel === "core") && (console.log("Core: BikeMatrix WebComponent Version: 1.3.13"), console.log("Core: BikeMatrixCore initialized"));
   }
   // Singleton pattern to ensure a single global instance
   static getInstance() {
@@ -15222,7 +15222,7 @@ function X1({
   } = ee(), [h, f] = O(!1), m = i || n.sku, [b, w] = O(null);
   if (i === "*")
     return n.logLevel === "verbose" && console.log("Early return as prouduct is blacklisted"), p($, {});
-  if (((_ = n.productCollections) == null ? void 0 : _.length) === 0 || !n.productCollections || !n.productCollections.some((k) => {
+  if (((_ = n.productCollections) == null ? void 0 : _.length) === 0 || !n.productCollections || Z.value && !n.productCollections.some((k) => {
     var A;
     return (A = Z.value) == null ? void 0 : A.compatibleCollections.some((C) => C.handle === k);
   }))
